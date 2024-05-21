@@ -26,7 +26,7 @@ SELECT
       CAST(DATE_DIFF('day', DATE('2023-08-01'), t.date) AS INTEGER) --provides the delta from the month start to the first day data is populated in the array to properly backfill the array.
       )
     ) || ARRAY[t.metric_value] AS metric_array, --concatenates yesterday's coalesced array with today's array
-  '2023-08-01' AS month_start --hard-coded date for month start that could be parameterized in other tools as Trino appears to be limited.
+  '2023-08-01' AS month_start --hard-coded date for month start that could be parameterized in other tools as Trino appears to be limited
 FROM today t
 FULL OUTER JOIN yesterday y ON t.host = y.host
   AND t.metric_name = y.metric_name
