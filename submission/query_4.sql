@@ -19,5 +19,5 @@ date_list_int AS (
 )
 SELECT
   *,
-  TO_BASE(history_int, 2) as history_in_binary --converts the integer that contains all the activity history for the user by browser type into a binary display that can be used to quickly determine users' activity by this_week, first 3 days, last_week, etc. There is a remaining issue of leading 0's being dropped from the TO_BASE function that needs corrected for these analyses to work properly.
+  TO_BASE(history_int, 2) as history_in_binary --converts the integer that contains all the activity history for the user by browser type into a binary display that can be used to quickly determine users' activity by this_week, first 3 days, last_week, etc. There is a remaining issue of leading 0's being dropped from the TO_BASE function that needs corrected for these analyses to work properly
 FROM date_list_int
