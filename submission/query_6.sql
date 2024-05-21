@@ -18,7 +18,7 @@ SELECT
   COALESCE(y.host, t.host) AS host, --coalesced columns to capture both yesterday's and today's values when there isn't a change.
   CASE
     WHEN y.host_activity_datelist IS NOT NULL THEN ARRAY[t.event_date] || y.host_activity_datelist
-    ELSE ARRAY[t.event_date] --used array and concatenate to capture all web activity per host in a single field.
+    ELSE ARRAY[t.event_date] --used array and concatenate to capture all web activity per host in a single field
   END AS host_activity_datelist,
   DATE('2023-01-01') AS DATE
 FROM
