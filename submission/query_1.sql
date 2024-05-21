@@ -7,4 +7,4 @@ WITH dedup AS (
 SELECT
   *
 FROM dedup
-WHERE rownum = 1 --Filters the query to only return the first row of the given partition of the CTE to dedup the handful of duplicated players per game. Original dataset was 668,628 rows and the deduped dataset is 668,339 rows.
+WHERE rownum = 1 --Filters the query to only return the first row of the given partition of the CTE to dedup the handful of duplicated players per game. Original dataset was 668,628 rows and the deduped dataset is 668,339 rows
