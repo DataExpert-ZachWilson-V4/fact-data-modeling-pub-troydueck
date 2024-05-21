@@ -60,6 +60,8 @@ You should de-dupe based on the combination of `game_id`, `team_id` and `player_
 
 Feel free to take the first value here.
 
+Note: For this query, you need to filter out duplicate records and display only unique records. To filter out duplicate records, you can use the combination of game_id, team_id, and player_id columns. You can achieve this either by using ROW_NUMBER() or by using GROUP BY.
+
 ## User Devices Activity Datelist DDL (`query_2.sql`)
 
 Similarly to what was done in day 2 of the fact data modeling week, write a DDL statement to create a cumulating user activity table by device.
@@ -130,3 +132,5 @@ As shown in the fact data modeling day 3 lab, write a DDL statement to create a 
 As shown in fact data modeling day 3 lab, write a query to incrementally populate the `host_activity_reduced` table from a `daily_web_metrics` table. Assume `daily_web_metrics` exists in your query. Don't worry about handling the overwrites or deletes for overlapping data.
 
 Remember to leverage a full outer join, and to properly handle imputing empty values in the array for windows where a host gets a visit in the middle of the array time window.
+
+Note: For this query, you will use the daily_web_metrics table, which you created in Week 2, Lab 3. In Lab 3, you created this daily_web_metrics table with a user column but without a host column. For this query, you need to re-create the table with the host column and populate data into the daily_web_metrics table. Ensure that this table is created in your schema, as you did in Week 2 Lab. Mention the schema name in your CTE/query during the submission.
