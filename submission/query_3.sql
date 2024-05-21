@@ -26,7 +26,7 @@ SELECT
   COALESCE(y.browser_type, t.browser_type) AS browser_type, --coalesced columns to capture both yesterday's and today's values when there isn't a change.
   CASE
     WHEN y.dates_active IS NOT NULL THEN ARRAY[t.event_date] || y.dates_active
-    ELSE ARRAY[t.event_date] --utilized array and concatenate to capture all web activity per user per browser_type in a single field.
+    ELSE ARRAY[t.event_date] --utilized array and concatenate to capture all web activity per user per browser_type in a single field
   END AS dates_active,
   DATE('2023-01-01') AS DATE
 FROM
